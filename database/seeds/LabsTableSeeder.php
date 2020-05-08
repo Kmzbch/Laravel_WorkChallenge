@@ -15,15 +15,18 @@ class LabsTableSeeder extends Seeder
             [
                 'name' => 'Richmond Lab',
                 'location' => 'Address 1',
+                'created_at' => date_create(),
 
             ],
             [
                 'name' => 'Scarborough Lab',
                 'location' => 'Address 2',
+                'created_at' => date_create(),
             ],
             [
                 'name' => 'Front Lab',
                 'location' => 'Address 3',
+                'created_at' => date_create(),
             ],
         ]);
         //

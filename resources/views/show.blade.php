@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Details</title>
     <style>
-        /* Set the size of the div element that contains the map */
         #map {
             height: 400px;
-            /* The height is 400 pixels */
-            width: 100%;
-            /* The width is the width of the web page */
+            width: 400px;
         }
     </style>
 
@@ -21,11 +18,9 @@
 
     <p>{{$lab->name}}</p>
     <p>{{$lab->location}}</p>
-
     <div id="map">
 
     </div>
-
 
     <script>
         // Initialize and add the map
@@ -50,8 +45,6 @@
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{config('services.google-map.apikey')}}&callback=initMap">
     </script>
-
-
 </body>
 
 </html>

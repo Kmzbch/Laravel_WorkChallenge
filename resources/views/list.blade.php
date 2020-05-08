@@ -29,7 +29,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" style="width: 30%;">Lab Name</th>
+                        <th scope="col" style="width: 30%;">Name</th>
                         <th scope="col" style="width: 20%;">Location</th>
                         <th scope="col" style="width: 20%;">Date Added</th>
                         <th scope="col" style="width: 10%;">Detail</th>
@@ -42,7 +42,7 @@
                     <tr scope="row" th:each="job:${jobs}">
                         <td>{{$lab->name}}</td>
                         <td>{{$lab->location}}</td>
-                        <td>Dummy Timestamp</td>
+                        <td>{{$lab->created_at}}</td>
                         <td><a class="btn btn-secondary" href="{{url('labs/'.$lab->id.'/show')}}">Detail</a></td>
                         <td><a class="btn btn-secondary" href="{{url('labs/'.$lab->id.'/edit')}}">Edit</a></td>
                         <td><a class="btn btn-danger" href="{{url('labs/'.$lab->id.'/delete')}}">Delete</a></td>
