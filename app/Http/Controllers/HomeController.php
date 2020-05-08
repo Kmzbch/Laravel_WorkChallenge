@@ -25,4 +25,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+    ///
+    public  function show()
+    {
+        error_log(config('services.google-map.apikey'));
+
+        return view('maps');
+    }
 }
