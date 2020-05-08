@@ -22,3 +22,7 @@ Route::get('/index', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// CRUD for LABS
+Route::get('/list', 'LabsController@list');
+Route::get('/create', 'LabsController@create');
