@@ -23,17 +23,18 @@
     <div class="jumbotron row justify-content-center color-white">
         <div class="col-8 justify-content-center div-style content">
 
-            <h2 class="display-5">Add New Lab</h2>
+            <h2 class="display-5">Edit Lab</h2>
             <br />
-            <form action="{{url('/store')}}" method="POST">
-                {!! csrf_field() !!} <div class="form-group">
-                    <label for="name">Name</label> <input type="text" class="form-control" id="name" name="name" placeholder="e.g. J001" /></span>
+            <form action="/labs/{{$lab->id}}/update" method="POST">
+                {!! csrf_field() !!}
+                <div class="form-group">
+                    <label for="name">Name</label> <input type="text" class="form-control" id="name" name="name" placeholder="e.g. J001" value="{{$lab->name}}" /></span>
                 </div>
                 <div class="form-group">
-                    <label for="location">Location</label> <input type="text" class="form-control" id="location" name="location" placeholder="e.g. J001" value="dummy" /></span>
+                    <label for="location">Location</label> <input type="text" class="form-control" id="location" name="location" placeholder="e.g. J001" value="{{$lab->location}}" /></span>
                 </div>
 
-                <br /> <input type="submit" class="col-2 btn btn-primary btn-lg" value="Add Job" /><br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/">Back
+                <br /> <input type="submit" class="col-2 btn btn-primary btn-lg" value="Edit Lab" /><br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/">Back
                     to Main</a>
             </form>
         </div>

@@ -18,6 +18,7 @@
 
                     <a href="{{url('/list')}}">View Lab List</a>
 
+
                 </div>
             </div>
         </div>

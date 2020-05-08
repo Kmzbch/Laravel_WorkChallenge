@@ -17,7 +17,7 @@ class CreateLabsTable extends Migration
             $table->id();
             //
             $table->string('name');
-            // $table->string('location')
+            $table->string('location');
             // dateAdded
             $table->timestamps();
         });

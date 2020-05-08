@@ -14,16 +14,16 @@ class LabsTableSeeder extends Seeder
         DB::table('labs')->insert([
             [
                 'name' => 'Richmond Lab',
-                // 'location' => 'Address 1',
+                'location' => 'Address 1',
 
             ],
             [
                 'name' => 'Scarborough Lab',
-                // 'location' => 'Address 2',
+                'location' => 'Address 2',
             ],
             [
                 'name' => 'Front Lab',
-                // 'location' => 'Address 3',
+                'location' => 'Address 3',
             ],
         ]);
         //

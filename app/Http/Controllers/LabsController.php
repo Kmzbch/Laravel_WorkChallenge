@@ -35,11 +35,18 @@ class LabsController extends Controller
     public function store(Request $request)
     {
         $lab = new Lab;
-        $lab->fill($lab->all());
-        $lab->save();
-        return redirect('/labs');
-    }
+        $lab->name = $request->name;
+        $lab->location = $request->location;
 
+        error_log('Some message here.');
+
+        error_log($request->name);
+        error_log($request->location);
+
+        // $lab->fill($lab->all());
+        $lab->save();
+        return redirect('/list');
+    }
 
 
     public function show($id)
@@ -53,7 +60,7 @@ class LabsController extends Controller
     public function edit($id)
     {
         $lab = Lab::find($id);
-        return view('labs.edit', [
+        return view('edit', [
             'lab' => $lab,
         ]);
     }
@@ -61,18 +68,21 @@ class LabsController extends Controller
     public function update(Request $request, $id)
     {
         $lab = Lab::find($id);
-        $lab->fill($request->all());
+
+        $lab->name = $request->name;
+        $lab->location = $request->location;
+        error_log($id);
+        // $lab->fill($request->all());
         $lab->save();
-        return redirect('/labs');
+        return redirect('/list');
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $lab = Lab::find($id);
         $lab->delete();
-        return redirect('/labs');
+        return redirect('/list');
     }
-
 
     //
 }

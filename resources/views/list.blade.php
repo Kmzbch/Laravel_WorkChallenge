@@ -40,10 +40,10 @@
                     @foreach ($labs as $lab)
                     <tr scope="row" th:each="job:${jobs}">
                         <td>{{$lab->name}}</td>
-                        <td>Dummy Location</td>
+                        <td>{{$lab->location}}</td>
                         <td>Dummy Timestamp</td>
-                        <td><a class="btn btn-secondary">Edit</a></td>
-                        <td><a class="btn btn-danger">Delete</a></td>
+                        <td><a class="btn btn-secondary" href="{{url('labs/'.$lab->id.'/edit')}}">Edit</a></td>
+                        <td><a class="btn btn-danger" href="{{url('labs/'.$lab->id.'/delete')}}">Delete</a></td>
 
                     </tr>
 
