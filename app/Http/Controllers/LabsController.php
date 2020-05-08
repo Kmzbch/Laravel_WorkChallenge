@@ -52,7 +52,7 @@ class LabsController extends Controller
     public function show($id)
     {
         $lab = Lab::find($id);
-        return view('labs.show', [
+        return view('show', [
             'lab' => $lab,
         ]);
     }

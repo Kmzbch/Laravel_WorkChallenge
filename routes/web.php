@@ -38,4 +38,6 @@ Route::post('/labs/{id}/update', 'LabsController@update');
 Route::get('/labs/{id}/delete', 'LabsController@delete');
 
 
+Route::get('/labs/{id}/show', 'LabsController@show');
+
 Route::get('/maps', 'HomeController@show');
