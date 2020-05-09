@@ -34,7 +34,7 @@
             <br />
             <input type="submit" class="col-2 btn btn-primary btn-lg" value="Edit Lab" /><br /> <br />
 
-            <a class="col-2 btn btn-info btn-lg" href="/">Back to Main</a>
+            <a class="col-2 btn btn-info btn-lg" href="/list">Back</a>
         </form>
     </div>
 </div>
