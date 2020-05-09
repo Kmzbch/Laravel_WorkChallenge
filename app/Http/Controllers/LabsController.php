@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 class LabsController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function viewMap()
     {
         $labs = Lab::all();

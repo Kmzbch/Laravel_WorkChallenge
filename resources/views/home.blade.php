@@ -1,23 +1,17 @@
 @extends('layouts.template')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Find your lab!</h1>
+        <br />
+        <p class="lead"><span class="font-weight-bold">LabFinder</span> - the top web service for lab search</p>
+        <hr class="my-4">
+        <p>Find labs hosted all over the world so you can enhance your learning experience.</p>
+        <br />
+        <a class="col-2 btn btn-info btn-lg" href="{{url('/viewMap')}}">Find Lab</a>
     </div>
 </div>
+
 @endsection

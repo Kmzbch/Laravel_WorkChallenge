@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class LabsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         // insert mock records
@@ -21,7 +16,7 @@ class LabsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Prepr Career Lab',
-                'location' => 'Oakville, ON, Canada',
+                'location' => '473 Morden Road, Oakville ON',
                 'created_at' => date_create(),
             ],
             [

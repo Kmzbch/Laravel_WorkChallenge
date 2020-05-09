@@ -1,8 +1,12 @@
 @extends('layouts.template')
 
 @section('content')
+
 <div class="jumbotron row justify-content-center color-white">
+
     <div class="col-8 justify-content-center div-style content">
+        <h2>Find labs</h2>
+        <br>
         <div id="map">
         </div>
 
@@ -11,57 +15,61 @@
 
 <script>
     // get the lab list from PHP
-    let labs = @json($labs);
+    const labs = @json($labs);
 
+    // 
     function dropMarkers(map) {
+        let geocoder;
+        let infoWindow;
 
         labs.forEach((lab) => {
-            console.log(lab);
+
+            geocoder = new google.maps.Geocoder();
+
+            // get geocode from address string
             geocoder.geocode({
                 'address': lab.location
             }, (results, status) => {
                 if (status == 'OK') {
-
-                    console.log(results);
-                    map.setCenter(results[0].geometry.location);
-                    let marker = new google.maps.Marker({
+                    const marker = new google.maps.Marker({
                         map: map,
-                        position: results[0].geometry.location
+                        position: results[0].geometry.location,
+                        animation: google.maps.Animation.DROP,
                     });
-                    // // fit bounds to cover all the marker in the map
-                    // let bounds = new google.map.LatLngBounds();
-                    // bounds.extend(marker);
-                    // map.fitBounds(bounds);
+
+                    infoWindow = new google.maps.InfoWindow();
+
+                    // attach click event to info window
+                    marker.addListener('click', function() {
+                        infoWindow.setContent(
+                            `<div><h4>${lab.name}</a></h4>${lab.location}</div><div class="text-right"><a href="labs/${lab.id}/show">View</a></div>`
+                        );
+                        infoWindow.open(map, marker);
+                    });
 
                 } else {
                     alert('Geocode was not successful for the following reason: ' + status);
                 }
+
+                map.setCenter(results[0].geometry.location);
+
                 return results[0].geometry.location;
             })
 
         });
-
-
-
     }
 
-    let geocoder;
-
     function initMap() {
-
-        geocoder = new google.maps.Geocoder();
-        var defaultLatLng = new google.maps.LatLng(-34.397, 150.644);
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: defaultLatLng,
-            // region: 'ca',
-            zoom: 5
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: new google.maps.LatLng(43.651070, -79.347015), // Toronto by default
+            region: 'ca',
+            zoom: 9
         });
 
         dropMarkers(map);
-
     }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key={{config('services.google-map.apikey')}}&libraries=places&callback=initMap" async defer></script>
 
 @endsection
