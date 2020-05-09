@@ -6,7 +6,7 @@
 
         <h2 class="display-5">Edit Lab</h2>
         <br />
-        <form action="{{url('/store')}}" method="POST">
+        <form action="{{url('labs/'.$lab->id.'/update')}}" method="POST">
 
             {!! csrf_field() !!}
 
