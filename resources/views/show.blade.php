@@ -63,7 +63,7 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             center: defaultLatLng,
             region: 'ca',
-            zoom: 13
+            zoom: 15
         });
 
         codeAddress(map);

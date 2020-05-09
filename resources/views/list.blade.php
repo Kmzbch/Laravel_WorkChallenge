@@ -6,6 +6,14 @@
 
         <h2 class="display-5">Explore Our Labs</h2>
         <br />
+
+        <form action="{{ url('list')}}" method="POST">
+            {!! csrf_field() !!}
+            <input class="form-control form-control-sm" type="search" id="searchQuery" name="searchQuery" value="{{$searchQuery}}">
+            <button type="submit" name="submit">Search</button>
+        </form>
+
+
         <table class="table table-striped table-hover" style="position: relative;">
             <thead>
                 <tr>
@@ -31,6 +39,11 @@
 
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            {{ $labs->links() }}
+        </div>
+
+
         <br /> <a class="col-2 btn btn-primary btn-lg" href="{{url('/create')}}">Add Lab</a>
         <br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/">Back to Main</a>
     </div>

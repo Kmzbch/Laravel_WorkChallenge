@@ -26,11 +26,37 @@ class LabsController extends Controller
      */
     public function list()
     {
-        $labs = Lab::all();
-        return view('list', [
+        // $labs = Lab::all();
+        // return view('list', [
+        //     'labs' => $labs,
+        // ]);
+        $labs = Lab::paginate(5);
+        return view('list')->with([
             'labs' => $labs,
+            'searchQuery' => ''
         ]);
     }
+
+    public function search(Request $request)
+    {
+        $term = null;
+
+        if ($request->has('searchQuery')) {
+            $term = $request->get('searchQuery');
+        }
+
+        // filter by keyword
+        $labs = Lab::where('name', 'LIKE', "%{$term}%")
+            ->orWhere('location', 'LIKE', "%{$term}%");
+
+        return view('list')->with(
+            [
+                'labs' => $labs->paginate(5),
+                'searchQuery' => $term
+            ]
+        );
+    }
+
 
     /**
      * GET for CREATE Lab

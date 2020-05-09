@@ -13,6 +13,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // CRUD for LABS
 Route::get('/list', 'LabsController@list');
+
+Route::post('/list', 'LabsController@search');
+
 Route::get('/create', 'LabsController@create');
 Route::post('/store', 'LabsController@store');
 
