@@ -18,7 +18,9 @@
 
                     <a href="{{url('/list')}}">View Lab List</a>
 
-                    <a href="{{url('/maps')}}">Googlemap test</a>
+                    <a href="{{url('/viewMap')}}">View Map</a>
+
+                    <!-- <a href="{{url('/maps')}}">Googlemap test</a> -->
 
                 </div>
             </div>

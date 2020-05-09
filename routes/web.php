@@ -40,4 +40,9 @@ Route::get('/labs/{id}/delete', 'LabsController@delete');
 
 Route::get('/labs/{id}/show', 'LabsController@show');
 
+
+// CRUD for LABS
+Route::get('/viewMap', 'LabsController@viewMap');
+
+
 Route::get('/maps', 'HomeController@show');

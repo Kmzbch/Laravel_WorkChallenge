@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class LabsController extends Controller
 {
+
+    public function viewMap()
+    {
+        $labs = Lab::all();
+        return view('viewMap', [
+            'labs' => $labs,
+        ]);
+    }
+
     /**
      * get and show all the labas
      */

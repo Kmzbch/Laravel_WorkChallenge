@@ -11,21 +11,22 @@ class LabsTableSeeder extends Seeder
      */
     public function run()
     {
+        // insert mock records
         DB::table('labs')->insert([
             [
-                'name' => 'Richmond Lab',
-                'location' => 'Address 1',
+                'name' => 'Open Source Innovation in Artificial Intelligence',
+                'location' => 'San Francisco, CA, USA',
                 'created_at' => date_create(),
 
             ],
             [
-                'name' => 'Scarborough Lab',
-                'location' => 'Address 2',
+                'name' => 'Prepr Career Lab',
+                'location' => 'Oakville, ON, Canada',
                 'created_at' => date_create(),
             ],
             [
-                'name' => 'Front Lab',
-                'location' => 'Address 3',
+                'name' => 'Security, Complience & Project Health',
+                'location' => 'San Francisco, CA, USA',
                 'created_at' => date_create(),
             ],
         ]);
