@@ -16,13 +16,15 @@
                 <label for="name" class="font-weight-bold">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter a lab name" value="{{$lab->name}}" required />
             </div>
+
+            <div class="form-group">
+                <label for="description" class="font-weight-bold">Description</label>
+                <textarea class="form-control" style="min-height: 150px; font-size: 18px" id="description" name="description" placeholder="Enter a description">{{$lab->description}}</textarea>
+            </div>
+
             <div class="form-group">
                 <label for="location" class="font-weight-bold">Location</label>
                 <input type="text" class="form-control" id="location" name="location" placeholder="Enter a location" value="{{$lab->location}}" required />
-            </div>
-            <div class="form-group">
-                <label for="description" class="font-weight-bold">Description</label>
-                <textarea class="form-control" style="min-height: 100px;" id="description" name="description" placeholder="Enter a description">{{$lab->description}}</textarea>
             </div>
 
             <!-- Google Maps goes here -->
@@ -71,12 +73,6 @@
         })
     }
 
-
-    // This example requires the Places library. Include the libraries=places
-    // parameter when you first load the API. For example:
-    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-
     let geocoder;
 
     function initMap() {
@@ -87,7 +83,11 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             center: defaultLatLng,
             region: 'ca',
-            zoom: 13
+            zoom: 13,
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false
+
         });
 
         codeAddress(map);
