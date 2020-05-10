@@ -35,10 +35,6 @@
                         map: map,
                         position: results[0].geometry.location,
                         animation: google.maps.Animation.DROP,
-                        mapTypeControl: false,
-                        fullscreenControl: false,
-                        streetViewControl: false
-
                     });
 
                     infoWindow = new google.maps.InfoWindow();
@@ -67,7 +63,10 @@
         const map = new google.maps.Map(document.getElementById('map'), {
             center: new google.maps.LatLng(43.651070, -79.347015), // Toronto by default
             region: 'ca',
-            zoom: 9
+            zoom: 9,
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false
         });
 
         dropMarkers(map);
