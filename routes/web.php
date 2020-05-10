@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::group(['prefix' => 'admin', 'middleware' => 'admin_auth'], function () {
+    Route::get('/home', 'Admin\HomeController@index');
+});
+
 // root
 Route::get('/', function () {
     return view('home');

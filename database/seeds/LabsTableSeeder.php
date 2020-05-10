@@ -24,6 +24,22 @@ class LabsTableSeeder extends Seeder
                 'location' => 'San Francisco, CA, USA',
                 'created_at' => date_create(),
             ],
+            [
+                'name' => 'Code and Response with The Linux Foundation',
+                'location' => '941 Progress Ave',
+                'created_at' => date_create(),
+            ],
+            [
+                'name' => 'Code and Response with The Linux Foundation',
+                'location' => '22 Front St',
+                'created_at' => date_create(),
+            ],
+            [
+                'name' => 'Beyond Covid-19 Lab',
+                'location' => '100 Queen St W',
+                'created_at' => date_create(),
+            ],
+
         ]);
         //
     }

@@ -7,6 +7,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // call table seeder for labs
+        $this->call(UsersTableSeeder::class);
+
+        // call table seeder for labs
         $this->call(LabsTableSeeder::class);
     }
 }
