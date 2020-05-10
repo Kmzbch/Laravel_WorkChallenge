@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="description" class="font-weight-bold">Description</label>
-                <textarea class="form-control" style="min-height: 100px;" id="description" name="description" placeholder="Enter a description" value="{{$lab->description}}" required></textarea>
+                <textarea class="form-control" style="min-height: 100px;" id="description" name="description" placeholder="Enter a description">{{$lab->description}}</textarea>
             </div>
 
             <!-- Google Maps goes here -->
