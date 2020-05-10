@@ -1,10 +1,17 @@
+.topimage {
+	width: 575px;
+	border-radius: 10px;
+}
+
+#sticky-footer {
+	flex-shrink: none;
+}
+
 #map {
 	height: 400px;
-	/* The height is 400 pixels */
 	width: 100%;
 }
 
-/* Optional: Makes the sample page fill the window. */
 html,
 body {
 	height: 100%;

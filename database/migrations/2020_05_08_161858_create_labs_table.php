@@ -6,28 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLabsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->id();
-            //
             $table->string('name');
-            $table->string('location');
-            // dateAdded
-            $table->timestamps();
+            $table->string('location'); // address string as a location
+            $table->timestamps(); // dateAdded
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('labs');

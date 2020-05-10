@@ -4,15 +4,14 @@ use Illuminate\Database\Seeder;
 
 class LabsTableSeeder extends Seeder
 {
+    // generate mock records
     public function run()
     {
-        // insert mock records
         DB::table('labs')->insert([
             [
                 'name' => 'Open Source Innovation in Artificial Intelligence',
-                'location' => 'San Francisco, CA, USA',
+                'location' => '800 Bay St, Toronto, ON',
                 'created_at' => date_create(),
-
             ],
             [
                 'name' => 'Prepr Career Lab',
@@ -21,7 +20,7 @@ class LabsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Security, Complience & Project Health',
-                'location' => 'San Francisco, CA, USA',
+                'location' => '446 Summerhill Ave, Toronto, ON',
                 'created_at' => date_create(),
             ],
             [
@@ -41,6 +40,5 @@ class LabsTableSeeder extends Seeder
             ],
 
         ]);
-        //
     }
 }

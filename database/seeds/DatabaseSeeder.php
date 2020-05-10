@@ -4,12 +4,11 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    // call table seeders
     public function run()
     {
-        // call table seeder for labs
         $this->call(UsersTableSeeder::class);
 
-        // call table seeder for labs
         $this->call(LabsTableSeeder::class);
     }
 }

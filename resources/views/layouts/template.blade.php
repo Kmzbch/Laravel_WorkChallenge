@@ -23,7 +23,8 @@
 
 <body class="outline-box">
     <!-- nav bar goes here -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white"> -->
+    <nav class="navbar navbar-expand-lg text-white">
         <a class="navbar-brand active font-weight-bold" href="{{ url('/') }}">
             {{ config('app.name', 'Lab Finder') }}
         </a>
@@ -83,6 +84,11 @@
     <!-- main content goes here -->
     @yield('content')
 
+    <footer id="sticky-footer" class="py-4">
+        <div class="container text-center">
+            <small>Copyright &copy; LabFinder - Kei Mizubuchi</small>
+        </div>
+    </footer>
 </body>
 
 </html>
