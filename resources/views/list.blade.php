@@ -45,8 +45,10 @@
                         <td>{{ date_format($lab->created_at,"M j, Y")}}</td>
                         @admin
                         <td style="position: relative; z-index: 99999999;">
-                            <a class="btn btn-primary" href="{{url('labs/'.$lab->id.'/edit')}}">Edit</a>
-                            <a class="btn btn-danger" href="{{url('labs/'.$lab->id.'/delete')}}">Delete</a>
+                            <div class="span">
+                                <a class="btn btn-primary" style="width: 80px;" href=" {{url('labs/'.$lab->id.'/edit')}}">Edit</a>
+                                <a class="btn btn-danger" style="width: 80px;" href=" {{url('labs/'.$lab->id.'/delete')}}">Delete</a>
+                            </div>
                         </td>
                         @endadmin
                     </tr>

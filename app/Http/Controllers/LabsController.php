@@ -30,7 +30,7 @@ class LabsController extends Controller
         // return view('list', [
         //     'labs' => $labs,
         // ]);
-        $labs = Lab::paginate(5);
+        $labs = Lab::paginate(7);
         return view('list')->with([
             'labs' => $labs,
             'searchQuery' => ''
@@ -51,7 +51,7 @@ class LabsController extends Controller
 
         return view('list')->with(
             [
-                'labs' => $labs->paginate(5),
+                'labs' => $labs->paginate(7),
                 'searchQuery' => $term
             ]
         );

@@ -1,3 +1,9 @@
+/**
+ * Referneces:
+ * https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+ * https://developers.google.com/maps/documentation/javascript/examples/marker-simple?hl=ja
+ * 
+ */
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {
@@ -5,8 +11,12 @@ function initMap() {
 			lng: -79.384293
 		},
 		region: 'ca',
-		zoom: 13
+		zoom: 13,
+		mapTypeControl: false,
+		fullscreenControl: false,
+		streetViewControl: false
 	});
+
 	var card = document.getElementById('pac-card');
 	// var input = document.getElementById('pac-input');
 	var input = document.getElementById('location');

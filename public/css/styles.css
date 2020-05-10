@@ -1,3 +1,4 @@
+@import '~material-design-icons/iconfont/material-icons.css';
 .topimage {
 	width: 575px;
 	border-radius: 10px;
@@ -8,7 +9,7 @@
 }
 
 #map {
-	height: 400px;
+	height: 500px;
 	width: 100%;
 }
 
