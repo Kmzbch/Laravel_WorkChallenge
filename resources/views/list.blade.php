@@ -32,7 +32,7 @@
                         <th scope="col" style="width: 25%;">Location</th>
                         <th scope="col" style="width: 16%;">Date Added</th>
                         @admin
-                        <th scope="col" style="width: 18%;">Actions</th>
+                        <th scope="col" style="width: 11%;">Actions</th>
                         @endadmin
 
                     </tr>
@@ -40,15 +40,13 @@
                 <tbody>
                     @foreach ($labs as $lab)
                     <tr scope="row">
-                        <td>{{$lab->name}} <a class="stretched-link" href="{{url('labs/'.$lab->id.'/show')}}"></a></td>
+                        <td> <a class="text-info" href="{{url('labs/'.$lab->id.'/show')}}">{{$lab->name}}</a></td>
                         <td>{{$lab->location}}</td>
                         <td>{{ date_format($lab->created_at,"M j, Y")}}</td>
                         @admin
-                        <td style="position: relative; z-index: 99999999;">
-                            <div class="span">
-                                <a class="btn btn-primary" style="width: 80px;" href=" {{url('labs/'.$lab->id.'/edit')}}">Edit</a>
-                                <a class="btn btn-danger" style="width: 80px;" href=" {{url('labs/'.$lab->id.'/delete')}}">Delete</a>
-                            </div>
+                        <td class="p-1" style="position: relative; z-index: 99999999;">
+                            <a class="btn btn-primary" href=" {{url('labs/'.$lab->id.'/edit')}}"><i class="material-icons">edit</i></a>
+                            <a class="btn btn-danger" href=" {{url('labs/'.$lab->id.'/delete')}}"><i class="material-icons">delete</i></a>
                         </td>
                         @endadmin
                     </tr>
@@ -68,5 +66,9 @@
 
     </div>
 </div>
-
+<script>
+    $(".delete").on("submit", function() {
+        return confirm("Are you sure?");
+    });
+</script>
 @endsection

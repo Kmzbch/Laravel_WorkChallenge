@@ -5,7 +5,7 @@
 <div class="jumbotron row justify-content-center color-white">
 
     <div class="col-8 justify-content-center div-style content">
-        <h2>Find labs</h2>
+        <h2>Find lab</h2>
         <br>
         <div id="map">
         </div>
@@ -35,6 +35,10 @@
                         map: map,
                         position: results[0].geometry.location,
                         animation: google.maps.Animation.DROP,
+                        mapTypeControl: false,
+                        fullscreenControl: false,
+                        streetViewControl: false
+
                     });
 
                     infoWindow = new google.maps.InfoWindow();

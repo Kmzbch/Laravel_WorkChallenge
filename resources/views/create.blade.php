@@ -4,7 +4,7 @@
 <div class="jumbotron row justify-content-center color-white">
     <div class="col-8 justify-content-center div-style content">
 
-        <h2 class="display-5">Add a New Lab</h2>
+        <h2 class="display-5">Add New Lab</h2>
         <br />
         <form action="{{url('/store')}}" method="POST">
 

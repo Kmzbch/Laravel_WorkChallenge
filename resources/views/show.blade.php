@@ -13,14 +13,10 @@
         <div id="map">
         </div>
 
-        <br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/">Back to Main</a>
+        <br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/list">Back</a>
 
     </div>
 </div>
-
-<!-- scripts -->
-<!-- <script src="{{ asset('js/maps.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{config('services.google-map.apikey')}}&libraries=places&callback=initMap" async defer></script> -->
 
 <script>
     let lab = @json($lab);
@@ -47,12 +43,6 @@
         })
     }
 
-
-    // This example requires the Places library. Include the libraries=places
-    // parameter when you first load the API. For example:
-    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-
     let geocoder;
 
     function initMap() {
@@ -63,7 +53,11 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             center: defaultLatLng,
             region: 'ca',
-            zoom: 15
+            zoom: 15,
+            mapTypeControl: false,
+            fullscreenControl: false,
+            streetViewControl: false
+
         });
 
         codeAddress(map);
