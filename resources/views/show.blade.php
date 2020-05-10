@@ -4,11 +4,13 @@
 <div class="jumbotron row justify-content-center color-white">
     <div class="col-8 justify-content-center div-style content">
 
-        <h4 class="f-s-30 m-b-20">{{$lab->name}}</h4>
+        <h2 class="f-s-30 m-b-20">{{$lab->name}}</h2>
 
-        <p>{{date_format($lab->created_at,"M j, Y")}}</p>
+        <h4>{{date_format($lab->created_at,"M j, Y")}}</h4>
 
-        <p>{{$lab->location}}</p>
+        <h5>{{$lab->location}}</h5>
+
+        <br>
 
         <div id="map">
         </div>

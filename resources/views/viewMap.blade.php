@@ -5,7 +5,7 @@
 <div class="jumbotron row justify-content-center color-white">
 
     <div class="col-8 justify-content-center div-style content">
-        <h2>Find lab</h2>
+        <h2>Find our Labs</h2>
         <br>
         <div id="map">
         </div>
@@ -39,10 +39,18 @@
 
                     infoWindow = new google.maps.InfoWindow();
 
+                    let contentHTML = `<div class="card border-light" style="width: 18rem;">`;
+                    contentHTML += `<div class="card-body">`;
+                    contentHTML += `<h5 class="card-title">${lab.name}</h5>`;
+                    contentHTML += `<p class="card-text">${lab.location}</p>`;
+                    contentHTML += `<a class="btn btn-primary" href="labs/${lab.id}/show">View</a>`;
+                    contentHTML += '</div>';
+                    contentHTML += '</div>';
+
                     // attach click event to info window
                     marker.addListener('click', function() {
                         infoWindow.setContent(
-                            `<div><h4>${lab.name}</a></h4>${lab.location}</div><div class="text-right"><a href="labs/${lab.id}/show">View</a></div>`
+                            contentHTML
                         );
                         infoWindow.open(map, marker);
                     });
