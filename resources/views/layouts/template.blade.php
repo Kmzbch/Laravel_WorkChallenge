@@ -36,8 +36,8 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="/">Home </a></li>
                 @auth
-                <li class="nav-item"><a class="nav-link" href="{{url('/viewMap')}}">View Map</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{url('/list')}}">Lab List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/viewMap')}}">Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/list')}}">Labs</a></li>
                 @endauth
             </ul>
             <!-- right side of navbar -->
