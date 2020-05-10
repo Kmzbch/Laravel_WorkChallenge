@@ -20,6 +20,10 @@
                 <label for="location" class="font-weight-bold">Location</label>
                 <input type="text" class="form-control" id="location" name="location" placeholder="Enter a location" value="{{$lab->location}}" required />
             </div>
+            <div class="form-group">
+                <label for="description" class="font-weight-bold">Description</label>
+                <textarea class="form-control" style="min-height: 100px;" id="description" name="description" placeholder="Enter a description" value="{{$lab->description}}" required></textarea>
+            </div>
 
             <!-- Google Maps goes here -->
             <label for="map" class="font-weight-bold">Map</label>

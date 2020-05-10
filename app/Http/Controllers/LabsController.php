@@ -26,11 +26,7 @@ class LabsController extends Controller
      */
     public function list()
     {
-        // $labs = Lab::all();
-        // return view('list', [
-        //     'labs' => $labs,
-        // ]);
-        $labs = Lab::paginate(7);
+        $labs = Lab::paginate(5);
         return view('list')->with([
             'labs' => $labs,
             'searchQuery' => ''
@@ -51,7 +47,7 @@ class LabsController extends Controller
 
         return view('list')->with(
             [
-                'labs' => $labs->paginate(7),
+                'labs' => $labs->paginate(5),
                 'searchQuery' => $term
             ]
         );
@@ -77,11 +73,7 @@ class LabsController extends Controller
         $lab = new Lab;
         $lab->name = $request->name;
         $lab->location = $request->location;
-
-        error_log('Some message here.');
-
-        error_log($request->name);
-        error_log($request->location);
+        $lab->description = $request->description;
 
         // $lab->fill($lab->all());
         $lab->save();
@@ -111,8 +103,8 @@ class LabsController extends Controller
 
         $lab->name = $request->name;
         $lab->location = $request->location;
-        error_log($id);
-        // $lab->fill($request->all());
+        $lab->description = $request->description;
+
         $lab->save();
         return redirect('/list');
     }

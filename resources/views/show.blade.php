@@ -5,17 +5,24 @@
     <div class="col-8 justify-content-center div-style content">
 
         <h2 class="f-s-30 m-b-20">{{$lab->name}}</h2>
+        <br>
 
-        <h4>{{date_format($lab->created_at,"M j, Y")}}</h4>
+        <h4><i class="material-icons">schedule</i>&nbsp;{{date_format($lab->created_at,"M j, Y")}}</h4>
 
-        <h5>{{$lab->location}}</h5>
+        <h5><i class="material-icons">place</i>&nbsp;{{$lab->location}}</h5>
+
+        <br>
+
+        <p style="font-size: 20px;">
+            {{$lab->description}}
+        </p>
 
         <br>
 
         <div id="map">
         </div>
 
-        <br /> <br /> <a class="col-2 btn btn-info btn-lg" href="/list">Back</a>
+        <br /> <br /> <a class="col-2 btn btn-info btn-lg" href="{{ url()->previous() }}">Back</a>
 
     </div>
 </div>
